@@ -63,7 +63,7 @@ enum pinValues {
     on = 1
 }  ;
 
-enum jetsonGPIONumber {
+enum jetsonGPIONumber { // TK1
     gpio57  =  57,    // J3A1 - Pin 50
 	gpio160 = 160,	  // J3A2 - Pin 40
 	gpio161 = 161,    // J3A2 - Pin 43
@@ -85,13 +85,19 @@ enum jetsonTX1GPIONumber {
        gpio219 = 219,    // J21 - Pin 29 - Output - GPIO19_AUD_RST
 };
 
+// Orbitty based on this: http://connecttech.com/resource-center/kdb342-using-gpio-connect-tech-jetson-tx1-carriers/
 enum jetsonTX2GPIONumber {
        gpio481 = 481,      // J21 - Pin 18 - Input - GPIO16_MDM_WAKE_AP
        gpio398 = 398,      // J21 - Pin 29 - Output - GPIO19_AUD_RST
-       gpio298 = 298,      // J21 - Pin 31 - Input  - GPIO9_MOTION_INT
        gpio389 = 389,      // J21 - Pin 33 - Bidir  - GPIO11_AP_WAKE_BT
-       gpio388 = 388       // J21 - Pin 37 - Output - GPIO8_ALS_PROX_INT
+       gpio298 = 298,      // J21 - Pin 31 - Input  - GPIO9_MOTION_INT
+			   // Orbitty: P4 - Pin 8 - Bidir (pullup 20k) - can_gpio2_paa2
+       gpio388 = 388,      // J21 - Pin 37 - Output - GPIO8_ALS_PROX_INT
+			   // Orbitty: P4 - Pin 7 - Bidir (pullup 20k) - gpio_pq4_pi4
+       gpio480 = 480,      // P4 - Pin 9 - Bidir (pullup 100k)  - gpio_mdm7_py6
+       gpio486 = 486       // Orbitty: P4 - Pin 10 - Bidir (pullup 100k)  - gpio_mdm1_py0
 };
+
 
 
 int gpioExport ( jetsonGPIO gpio ) ;
